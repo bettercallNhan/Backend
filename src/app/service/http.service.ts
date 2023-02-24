@@ -6,12 +6,11 @@ import { environment } from 'src/environments/environment';
 })
 export class HttpService {
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private http:HttpClient) { }
   getAll(){
-    return this.httpClient.get(`${environment.api_url}user/all`);
+    return this.http.get(`${environment.api_url}all`);
   }
   createUser(body : any){
-    return this.httpClient.post(`${environment.api_url}user/create`,
-    body).subscribe;
+    return this.http.post(`${environment.api_url}create`,body).subscribe();
   }
 }

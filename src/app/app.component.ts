@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
+  user$:any = new Observable<Object>
   title = '24.2';
   id : number = 0;
   username: string = '';
@@ -16,7 +17,6 @@ export class AppComponent{
   // ngOnInit(): void {
   //     this.http.getAll().subscribe((data) => {console.log(data)});
   // }
-  user$:any = new Observable<Object>
   getAllUser(){
     this.user$ = this.http.getAll();
   }
@@ -24,8 +24,7 @@ export class AppComponent{
     this.http.createUser({
       id:this.id,
       username : this.username
-    });
-
+    })
     this.id = 0;
     this.username = '';
   }

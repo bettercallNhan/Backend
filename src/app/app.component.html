@@ -1,5 +1,5 @@
-<div>
-  <button (click)="getAllUser()">Get All</button>
+<div id="bf">
+  <button id="getall" (click)="getAllUser()">Get All</button>
   <form id ="Create">
     <input name = 'id' type = 'text' [(ngModel)]="id">
     <input name = 'username' type = 'text' [(ngModel)]="username">
@@ -7,7 +7,7 @@
   </form>
 </div>
 
-<div *ngFor="let u of (user$|async)">
-  <div>ID : {{u.id}}</div>
-  <div>Name : {{u.username}}</div>
+<div id="ngfor" *ngFor="let u of (user$|async)">
+  <div id="id">ID : {{u.id}}</div>
+  <div id="name">Name : {{u.username}}</div>
 </div>
